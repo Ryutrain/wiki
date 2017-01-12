@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="Windows-31J"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+version="2.5">
+
+<filter>
+	<filter-name>EncodingFilter</filter-name>
+	<filter-class>fw.EncodingFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>EncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping> 
+
+ <jsp-config>
+	<jsp-property-group>
+		<url-pattern>*.jsp</url-pattern>
+		<page-encoding>Windows-31J</page-encoding>
+		<include-prelude>/common/header.jsp</include-prelude>
+		<include-coda>/common/footer.jsp</include-coda>
+	</jsp-property-group>
+</jsp-config>
+
+
+
+<!-- 参照 -->
+<servlet>
+	<servlet-name>refer</servlet-name>
+	<servlet-class>wiki.ReferServlet</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+	<servlet-name>refer</servlet-name>
+	<url-pattern>/refer</url-pattern>
+</servlet-mapping>
+
+<!-- 表 -->
+<servlet>
+	<servlet-name>list</servlet-name>
+	<servlet-class>wiki.ListServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>list</servlet-name>
+	<url-pattern>/list</url-pattern>
+</servlet-mapping>
+
+
+<!-- 新規 -->
+<servlet>
+	<servlet-name>create</servlet-name>
+	<servlet-class>wiki.CreateServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>create</servlet-name>
+	<url-pattern>/create</url-pattern>
+</servlet-mapping>
+
+
+<!-- 更新 -->
+<servlet>
+	<servlet-name>update</servlet-name>
+	<servlet-class>wiki.UpdateServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>update</servlet-name>
+	<url-pattern>/update</url-pattern>
+</servlet-mapping>
+
+
+<!-- 404エラー -->
+
+<error-page>
+	<error-code>404</error-code>
+	<location>/NotFound.jsp</location>
+</error-page>
+
+</web-app>
