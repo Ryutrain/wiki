@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=windows-31J"
+	pageEncoding="windows-31J"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
+<html>
+<head>
+<title>¤•iˆê——</title>
+</head>
+<body>
+<h1>¤•iˆê——</h1>
+<table border="1">
+	<tr><th>¤•i–¼</th><th>‰¿Ši</th></tr>
+	<c:forEach var="product" items="${data}">
+		<tr><td>${product.name}</td><td>${product.price}</td></tr>
+	</c:forEach>
+</table>
+</body>
+</html>

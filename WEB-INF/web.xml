@@ -80,4 +80,12 @@ version="2.5">
 	<location>/NotFound.jsp</location>
 </error-page>
 
+<!-- DBƒGƒ‰[ -->
+
+<error-page>
+	<exception-type>java.lang.IllegalStateException</exception-type>
+	<location>/SQLError.jsp</location>
+</error-page>
+	
+
 </web-app>
