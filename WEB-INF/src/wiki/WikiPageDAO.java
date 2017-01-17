@@ -36,6 +36,7 @@ public class WikiPageDAO{
 	//戻り値はWikiPageオブジェクトのListです。
 	public List<WikiPage> findAll() throws SQLException{
 		String sql = "SELECT * FROM wiki_page"
+						+" WHERE delete_flag='0'";
 						+" ORDER BY update_time DESC";
 		return DBManager.simpleFind(sql,allMapping);
 	}
@@ -44,7 +45,8 @@ public class WikiPageDAO{
 	
 	public WikiPage findByName(String name) throws SQLException{
 		String sql = "SELECT * FROM wiki_page"
-						+" WHERE name='"+ name + "'";
+						+" WHERE name='"+ name + "'"
+						+"AND delete_flag='0'";
 		
 		List<WikiPage> list = DBManager.simpleFind(sql,allMapping);
 		if(list.size()==0){
@@ -60,11 +62,12 @@ public class WikiPageDAO{
 	public void insert(WikiPage page) throws SQLException{
 		System.out.println(page.getIpaddress());
 		String sql = //"INSERT INTO wiki_page(name,content)"
-				   "INSERT INTO wiki_page(name,content,ip)"
+				   "INSERT INTO wiki_page(name,content,ip,delete_flag)"
 						+ " VALUES("
 						+ "'" + page.getName() + "'"
 						+ ",'" + page.getContent() + "'"
 						+ ",'" + page.getIpaddress() + "'"
+						+ ",'0'"
 						+ ")";
 		System.out.println(sql);
 		DBManager.simpleUpdate(sql);
@@ -82,8 +85,14 @@ public class WikiPageDAO{
 	
 		//指定したWikiPageを元にDELETEを実行します。(非推奨)
 	public void delete(WikiPage page) throws SQLException{
-		String sql = "DELETE FROM wiki_page WHERE name= '"
-						+ page.getName() + "'";
+		String sql = "UPDATE wiki_page"
+						+ " SET "
+						+ " delete_flag='1'"
+						+ " WHERE name = '" + page.getName() + "'";
 		DBManager.simpleUpdate(sql);
+		
+		/*String sql = "DELETE FROM wiki_page WHERE name= '"
+						+ page.getName() + "'";
+		DBManager.simpleUpdate(sql);*/
 	}
 }
