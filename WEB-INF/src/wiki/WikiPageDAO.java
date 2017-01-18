@@ -18,14 +18,17 @@ public class WikiPageDAO{
 		public WikiPage createFromResultSet(ResultSet rs)
 			throws SQLException{
 			
-			WikiPage page = new WikiPage();
-			page.setName(rs.getString("name"));
-			page.setContent(rs.getString("content"));
-			page.setUpdateTime(rs.getTimestamp("update_time"));
-			page.setIpaddress(rs.getString("ip"));
-			return page;
-			}
-		};
+					
+					WikiPage page = new WikiPage();
+					if(!rs.getBoolean("Delete_flag")){
+					page.setName(rs.getString("name"));
+					page.setContent(rs.getString("content"));
+					page.setUpdateTime(rs.getTimestamp("update_time"));
+					page.setIpaddress(rs.getString("ip"));
+					}
+					return page;
+		}
+	};
 	
 	//このクラスのインスタンスを取得します。
 	public static WikiPageDAO getInstance(){
@@ -36,7 +39,7 @@ public class WikiPageDAO{
 	//戻り値はWikiPageオブジェクトのListです。
 	public List<WikiPage> findAll() throws SQLException{
 		String sql = "SELECT * FROM wiki_page"
-						+" WHERE delete_flag='0'";
+						+" WHERE delete_flag='0'"
 						+" ORDER BY update_time DESC";
 		return DBManager.simpleFind(sql,allMapping);
 	}
