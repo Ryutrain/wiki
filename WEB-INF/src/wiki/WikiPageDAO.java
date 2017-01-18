@@ -36,7 +36,7 @@ public class WikiPageDAO{
 	//戻り値はWikiPageオブジェクトのListです。
 	public List<WikiPage> findAll() throws SQLException{
 		String sql = "SELECT * FROM wiki_page"
-						+" WHERE delete_flag='0'";
+						+" WHERE delete_flag='0'"
 						+" ORDER BY update_time DESC";
 		return DBManager.simpleFind(sql,allMapping);
 	}
