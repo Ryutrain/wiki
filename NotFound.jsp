@@ -8,7 +8,7 @@
 <body>
 </h1>
 	<h1>–³Œø‚ÈURL‚Å‚·</h1>
-	<h3>404. Thatfs an error.</h3>
+	<h3>404. Thatfs an Error.</h3>
 	<button onclick="history.back();">–ß‚é</button>
 </body>
 </html>

@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 /*C33*/SET SCHEMA PUBLIC
+=======
+/*C3*/SET SCHEMA PUBLIC
+>>>>>>> refs/remotes/Ryutrain/master
 DISCONNECT

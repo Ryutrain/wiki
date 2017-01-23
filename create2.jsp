@@ -10,6 +10,7 @@
 	<TEXTAREA ROWS="15" COLS="60" NAME="content"></TEXTAREA>
 	
 	<BR>
+	削除パス：<INPUT TYPE="password" NAME="delete_key"><br>
 	<INPUT TYPE="SUBMIT" VALUE="作成">
 	<INPUT TYPE="BUTTON" VALUE="キャンセル" ONCLICK="location.href='refer'">
 	
