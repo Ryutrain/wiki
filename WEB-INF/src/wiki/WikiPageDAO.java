@@ -25,6 +25,7 @@ public class WikiPageDAO{
 					page.setContent(rs.getString("content"));
 					page.setUpdateTime(rs.getTimestamp("update_time"));
 					page.setIpaddress(rs.getString("ip"));
+					//page.setDelete_Key(rs.getString("delete_key"));
 					}
 					return page;
 		}
@@ -72,8 +73,31 @@ public class WikiPageDAO{
 						+ ",'" + page.getIpaddress() + "'"
 						+ ",'0'"
 						+ ")";
+				  /*"INSERT INTO wiki_page(name,content,ip,delete_flag,delete_key)"
+						+ " VALUES("
+						+ "'" + page.getName() + "'"
+						+ ",'" + page.getContent() + "'"
+						+ ",'" + page.getIpaddress() + "'"
+						+ ",'" + page.getUpdateTime() + "'"
+						+ ",'0'"
+						+ ",'" + page.getDelete_Key() + "'"
+						+ ")";
+		*/
+		
+		String sql2 = "INSERT INTO wiki_history(name,content,ip,delete_key)"
+						+ " VALUES("
+						+ "'" + page.getName() + "'"
+						+ ",'" + page.getContent() + "'"
+						+ ",'" + page.getIpaddress() + "'"
+						//+ ",'" + page.getDelete_Key() + "'"
+						+ ",'" + null+ "'"
+						+ ")";
+		
+		
 		System.out.println(sql);
+		System.out.println(sql2);
 		DBManager.simpleUpdate(sql);
+		DBManager.simpleUpdate(sql2);
 	}
 	
 	//指定したWikiPageを元にUPDATEを実行します。
@@ -83,7 +107,17 @@ public class WikiPageDAO{
 						+ " content='" + page.getContent() + "'"
 						+ ",ip='" + page.getIpaddress() + "'"
 						+ " WHERE name = '" + page.getName() + "'";
+		String sql2 ="INSERT INTO wiki_history(name,content,ip,delete_key)"
+						+ " VALUES("
+						+ "'" + page.getName() + "'"
+						+ ",'" + page.getContent() + "'"
+						+ ",'" + page.getIpaddress() + "'"
+						//+ ",'" + page.getDelete_Key() + "'"
+						+ ",'" + null+ "'"
+						+ ")";
+		
 		DBManager.simpleUpdate(sql);
+		DBManager.simpleUpdate(sql2);
 	}
 	
 		//指定したWikiPageを元にDELETEを実行します。(非推奨)
@@ -92,10 +126,21 @@ public class WikiPageDAO{
 						+ " SET "
 						+ " delete_flag='1'"
 						+ " WHERE name = '" + page.getName() + "'";
-		DBManager.simpleUpdate(sql);
+		
 		
 		/*String sql = "DELETE FROM wiki_page WHERE name= '"
 						+ page.getName() + "'";
 		DBManager.simpleUpdate(sql);*/
+		
+		String sql2 ="INSERT INTO wiki_history(name,content,ip,delete_key)"
+						+ " VALUES("
+						+ "'" + page.getName() + "'"
+						+ ",'######DELETE######'"
+						+ ",'" + page.getIpaddress() + "'"
+						//+ ",'" + page.getDelete_Key() + "'"
+						+ ",'" + null+ "'"
+						+ ")";
+		DBManager.simpleUpdate(sql);
+		DBManager.simpleUpdate(sql2);
 	}
 }

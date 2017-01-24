@@ -18,6 +18,11 @@ public class WikiPage{
 	//private static InetAddress ip;
 	private String ipaddress; // = ip.toString();
 	
+	//削除用パスワード
+	/*
+	private String delete_key;
+	*/
+	
 	//整形を行った内容を返す
 	public String getFormatedContent(){
 		WikiFormater formater = new WikiFormater();
@@ -51,5 +56,13 @@ public class WikiPage{
 	public void setIpaddress(String ipaddress){
 		this.ipaddress=ipaddress;
 	}
+	
+	/*public String getDelete_Key(){
+		return delete_key;
+	}
+	
+	public void setDelete_Key(String delete_key){
+		this.delete_key=delete_key;
+	}*/
 	
 }

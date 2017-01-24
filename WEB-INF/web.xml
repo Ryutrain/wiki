@@ -87,5 +87,11 @@ version="2.5">
 	<location>/SQLError.jsp</location>
 </error-page>
 	
+<!-- d•¡ƒGƒ‰[ -->
+
+<error-page>
+	<exception-type>java.sql.SQLIntegrityConstraintViolationException</exception-type>
+	<location>/PrimaryError.jsp</location>
+</error-page>
 
 </web-app>

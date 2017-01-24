@@ -18,6 +18,7 @@ public class UpdateServlet extends HttpServlet{
 		
 		String name = req.getParameter("name");
 		String content = req.getParameter("content");
+		//String delete_key = req.getParameter("delete_key");
 		String cmd = req.getParameter("cmd");
 		
 		
@@ -31,6 +32,7 @@ public class UpdateServlet extends HttpServlet{
 			wikiPage.setName(name);
 			wikiPage.setContent(content);
 			wikiPage.setIpaddress(ipaddress);
+			//wikiPage.setDelete_Key(delete_key);
 			System.out.println(ipaddress);
 			
 			
