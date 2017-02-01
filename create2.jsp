@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=Windows-31J"
+ pageEncoding="Windows-31J"%>
+<link rel="stylesheet"type="text/css" href="css/create.css">
 
 
 <H1>${param.name}の作成</H1>
@@ -10,7 +13,7 @@
 	<TEXTAREA ROWS="15" COLS="60" NAME="content"></TEXTAREA>
 	
 	<BR>
-	削除パス：<INPUT TYPE="password" NAME="delete_key"><br>
+	削除パス：<INPUT TYPE="password" maxlength='12' minlength='4' NAME="delete_key"><br>
 	<INPUT TYPE="SUBMIT" VALUE="作成">
 	<INPUT TYPE="BUTTON" VALUE="キャンセル" ONCLICK="location.href='refer'">
 	
@@ -25,3 +28,4 @@
 作成すると作成した人のIPアドレスが公開されます。<br/>
 
 </FORM>
+

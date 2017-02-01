@@ -1,5 +1,28 @@
-	#left{width:200px; height:200px;background:#ffffff;float:left;}
-	#right{width:90%; height:200px;background:#fffff;}
-	#foo{position:fixed;bottom:10px;left:8;right:8;}
-</style>
-</head>
+html,body
+	{
+		height: 100%;
+		margin: 0px;
+	}
+	#left
+	{
+		width:14.7%;
+		height:100%;
+		background:#DDD;
+		float:left;
+	}
+	#right
+	{
+		width:85%;
+		height:100%;
+		background:#CCC;
+		float:right;
+		left:15;
+	}
+	#foo
+	{
+		position:
+		fixed;bottom:0px;
+		left:0;
+		right:0;
+		background:#FFF;
+	}

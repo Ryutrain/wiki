@@ -11,12 +11,12 @@
  
  <a href="/wiki"><img src="img/logo.gif"></a>
  
- <a href="list">ˆê——</a>
- |
- <a href="create.jsp">V‹K</a>
+ 
+ 
+
  
  <P>${message}
  
  <hr>
- 
+ <div id="right">
  

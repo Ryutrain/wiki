@@ -19,9 +19,9 @@ public class WikiPage{
 	private String ipaddress; // = ip.toString();
 	
 	//削除用パスワード
-	/*
+	
 	private String delete_key;
-	*/
+	
 	
 	//整形を行った内容を返す
 	public String getFormatedContent(){
@@ -57,12 +57,12 @@ public class WikiPage{
 		this.ipaddress=ipaddress;
 	}
 	
-	/*public String getDelete_Key(){
+	public String getDelete_Key(){
 		return delete_key;
 	}
 	
 	public void setDelete_Key(String delete_key){
 		this.delete_key=delete_key;
-	}*/
+	}
 	
 }

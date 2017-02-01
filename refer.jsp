@@ -21,7 +21,7 @@ ${wikiPage.formatedContent}
 <br>
 <br>
 <br>
-<br>
+最終更新日:${wikiPage.updateTime}<br>
 編集者:${wikiPage.ipaddress}
 
 <HR>
@@ -31,5 +31,6 @@ ${wikiPage.formatedContent}
 
 
 <input type="button" onclick="location.href='update.jsp'"value="更新"/>
+	削除パス：<INPUT TYPE="password" maxlength='12' minlength='4' NAME="delete_key"/>
 	<input type="submit" value="削除"  ONCLICK="check();"/>
 </form>

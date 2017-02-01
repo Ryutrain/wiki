@@ -49,6 +49,18 @@ version="2.5">
 </servlet-mapping>
 
 
+<!-- XV—š—ð -->
+<servlet>
+	<servlet-name>historylist</servlet-name>
+	<servlet-class>wiki.HistoryListServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>historylist</servlet-name>
+	<url-pattern>/historylist</url-pattern>
+</servlet-mapping>
+
+
 <!-- V‹K -->
 <servlet>
 	<servlet-name>create</servlet-name>

@@ -18,7 +18,7 @@ public class CreateServlet extends HttpServlet{
 		req.setCharacterEncoding("Windows-31J");
 		String name = req.getParameter("name");
 		String content = req.getParameter("content");
-		//String delete_key = req.getParameter("delete_key");
+		String delete_key = req.getParameter("delete_key");
 		
 		/*try {
     		  byte[] byteData1 = name.getBytes("ISO-8859");
@@ -48,7 +48,7 @@ public class CreateServlet extends HttpServlet{
 			//ipアドレスをセット！！！！！！！！！！
 			wikiPage.setIpaddress(ipaddress);
 			
-			//wikiPage.setDelete_Key(delete_key);
+			wikiPage.setDelete_Key(delete_key);
 			
 			
 			WikiPageDAO.getInstance().insert(wikiPage);
