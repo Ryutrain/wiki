@@ -1,3 +1,5 @@
+package wiki;
+
 import java.util.ArrayList;
 
 import java.io.IOException;
