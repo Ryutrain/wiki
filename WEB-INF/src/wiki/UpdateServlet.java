@@ -13,12 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import check.*;
+
 public class UpdateServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException{
 		
 		String name = req.getParameter("name");
 		String content = req.getParameter("content");
-		//String delete_key = req.getParameter("delete_key");
+		String delete_key = req.getParameter("delete_key");
+		if(delete_key.length()==0){
+			delete_key=" ";
+		}
 		String cmd = req.getParameter("cmd");
 		
 		
@@ -32,7 +37,7 @@ public class UpdateServlet extends HttpServlet{
 			wikiPage.setName(name);
 			wikiPage.setContent(content);
 			wikiPage.setIpaddress(ipaddress);
-			//wikiPage.setDelete_Key(delete_key);
+			wikiPage.setDelete_Key(delete_key);
 			System.out.println(ipaddress);
 			
 			
@@ -43,10 +48,20 @@ public class UpdateServlet extends HttpServlet{
 				req.getRequestDispatcher("/refer")
 				.forward(req,res);
 			}else if(cmd.equals("delete")){
-				WikiPageDAO.getInstance().delete(wikiPage);
-				RequestUtils.setMessage(req,name+"‚ğíœ");
-				req.getRequestDispatcher("/list")
-				.forward(req,res);
+				DeleteExecuter DE=new DeleteExecuter();
+				CheckReplace cr = new CheckReplace();
+				wikiPage = cr.check(wikiPage);
+				Boolean b = (Boolean) DE.execute(wikiPage);
+				if(b){
+					WikiPageDAO.getInstance().delete(wikiPage);
+					RequestUtils.setMessage(req,name+"‚ğíœ");
+					req.getRequestDispatcher("/list")
+					.forward(req,res);
+				}else{
+					RequestUtils.setMessage(req,"íœƒpƒX‚ªˆá‚¢‚Ü‚·");
+					req.getRequestDispatcher("/refer")
+					.forward(req,res);
+				}
 			}else{
 				req.getRequestDispatcher("/refer")
 				.forward(req,res);

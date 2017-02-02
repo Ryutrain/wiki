@@ -26,15 +26,15 @@ public class DeleteServlet extends HttpServlet{
 		
 		DeleteBean db = new DeleteBean();
 		//DeleteBeanに各入力項目を代入
-		try{
-			db.setPost_number(Integer.parseInt(name));
-		}catch(NumberFormatException e){
+		//try{
+			db.setName(name);
+		/*}catch(NumberFormatException e){
 			db.setPost_number(0);
-		}
+		}*/
 		db.setDelete_key(delete_key);
 		//削除パスの ' を '' に変換する
-		CheckReplace cr = new CheckReplace();
-		db = cr.check(db);
+		//CheckReplace cr = new CheckReplace();
+		//db = cr.check(db);
 		//DeleteExecuterのexecuteを呼び出し、コメントの削除を試みる。結果はBooleanで返される
 		Boolean b = (Boolean) DE.execute(db);
 		

@@ -47,6 +47,39 @@ public class DBManager{
 	}
 
 	
+	public static ResultSet Update(String sql) throws SQLException{
+		try{
+			Connection con = DBManager.getConnection();;
+			System.out.println("ÇËÅ[Ç«");
+			
+			
+			Statement st = con.createStatement();
+			
+			System.out.println(sql);
+			
+			ResultSet rs = st.executeQuery(sql);
+			return rs;
+		}
+		catch(SQLException e){
+			System.out.println("class:Accessor_method:Update() SQLException");
+			e.printStackTrace();
+			
+		}
+		catch(Exception e){
+			System.out.println("class:Accessor_method:Update() Exception");
+		}
+		return null;
+	}
+	
+	public void close(){
+		try{
+			Connection con = null;
+			con.close();
+		}
+		catch(SQLException e){}
+		catch(Exception e){}
+	}
+	
 	
 	
 	public  static <T> List simpleFind(String sql,ResultSetBeanMapping<T> mapping)
