@@ -2,6 +2,7 @@
  pageEncoding="Windows-31J"%>
 <link rel="stylesheet"type="text/css" href="css/create.css">
 
+<<<<<<< HEAD
 </div>
 <div id="left">
 
@@ -13,7 +14,14 @@
  
 <li><a href="historylist">XV—š—ğ</a><br><br>
 <div id="foo" >
+=======
+
+
+
+	<div id="foo" >
+>>>>>>> origin/master
  <hr>
+
  (c)1996-2016 Servlet/jsp RyutrainProject2016
  </div>
  
