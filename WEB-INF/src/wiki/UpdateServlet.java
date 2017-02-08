@@ -20,10 +20,7 @@ public class UpdateServlet extends HttpServlet{
 		
 		String name = req.getParameter("name");
 		String content = req.getParameter("content");
-		String delete_key = req.getParameter("delete_key");
-		if(delete_key.length()==0){
-			delete_key=" ";
-		}
+		
 		String cmd = req.getParameter("cmd");
 		
 		
@@ -37,7 +34,7 @@ public class UpdateServlet extends HttpServlet{
 			wikiPage.setName(name);
 			wikiPage.setContent(content);
 			wikiPage.setIpaddress(ipaddress);
-			wikiPage.setDelete_Key(delete_key);
+			
 			System.out.println(ipaddress);
 			
 			
@@ -45,9 +42,15 @@ public class UpdateServlet extends HttpServlet{
 			if(cmd.equals("update")){
 				WikiPageDAO.getInstance().update(wikiPage);
 				RequestUtils.setMessage(req,name+"ÇçXêV");
-				req.getRequestDispatcher("/refer")
+				req.getRequestDispatcher("/list")
 				.forward(req,res);
 			}else if(cmd.equals("delete")){
+				String delete_key = req.getParameter("delete_key");
+				wikiPage.setDelete_Key(delete_key);
+				
+				if(delete_key.length()==0){
+					delete_key=" ";
+				}
 				DeleteExecuter DE=new DeleteExecuter();
 				CheckReplace cr = new CheckReplace();
 				wikiPage = cr.check(wikiPage);

@@ -55,7 +55,7 @@ public class CreateServlet extends HttpServlet{
 			RequestUtils.setMessage(req,name+"ÇçÏê¨");
 			
 			
-			req.getRequestDispatcher("/refer.jsp").forward(req,res);
+			req.getRequestDispatcher("/").forward(req,res);
 		}catch(SQLException e){
 			throw new ServletException(e);
 		}catch(UnknownHostException e){

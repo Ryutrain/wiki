@@ -13,9 +13,9 @@
 	<TEXTAREA ROWS="15" COLS="60" NAME="content"></TEXTAREA>
 	
 	<BR>
-	削除パス：<INPUT TYPE="password" maxlength='12' minlength='4' NAME="delete_key"><br>
+	削除パス：<INPUT required TYPE="password" maxlength='12' minlength='4' NAME="delete_key"><br>
 	<INPUT TYPE="SUBMIT" VALUE="作成">
-	<INPUT TYPE="BUTTON" VALUE="キャンセル" ONCLICK="location.href='refer'">
+	<INPUT TYPE="BUTTON" VALUE="キャンセル" ONCLICK="history.back();">
 	
 	
 <br/>

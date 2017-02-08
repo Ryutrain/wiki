@@ -92,6 +92,13 @@ version="2.5">
 	<location>/NotFound.jsp</location>
 </error-page>
 
+<!-- 記事不在エラー -->
+
+<error-page>
+	<exception-type>java.lang.NullPointerException</exception-type>
+	<location>/NotContents.jsp</location>
+</error-page>
+
 <!-- DBエラー -->
 
 <error-page>

@@ -42,7 +42,7 @@ public class HistoryDAO{
 		String sql = "SELECT name,update_time,ip FROM wiki_history"
 						+" WHERE delete_flag='0'"
 						+" ORDER BY update_time DESC";
-		System.out.println(sql);
+		//System.out.println(sql);
 		return DBManager.simpleFind(sql,allMapping);
 	}
 	//指定した名前に一致するレコードを検索します。
