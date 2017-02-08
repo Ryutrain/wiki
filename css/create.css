@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-html,body
-=======
-	html,body
->>>>>>> 749b0ea14311c4b1c2f9f3e858d68b7a8f1b9154
+
 	{
 		height: 100%;
 		margin: 0px;
@@ -10,11 +6,10 @@ html,body
 	#left
 	{
 		width:14.7%;
-<<<<<<< HEAD
 		height:100%;
-=======
+
 		height:90%;
->>>>>>> 749b0ea14311c4b1c2f9f3e858d68b7a8f1b9154
+
 		background:#DDD;
 		float:left;
 	}
