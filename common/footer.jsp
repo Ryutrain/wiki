@@ -2,7 +2,7 @@
  pageEncoding="Windows-31J"%>
 <link rel="stylesheet"type="text/css" href="css/create.css">
 
-<<<<<<< HEAD
+
 </div>
 <div id="left">
 
