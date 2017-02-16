@@ -101,6 +101,7 @@ public class WikiPageDAO{
 		String sql = "UPDATE wiki_page"
 						+ " SET "
 						+ " content='" + page.getContent() + "'"
+						+ ",update_time= SYSDATE"
 						+ ",ip='" + page.getIpaddress() + "'"
 						+ " WHERE name = '" + page.getName() + "'";
 		String sql2 ="INSERT INTO wiki_history(name,content,ip,delete_flag,delete_key)"
@@ -112,7 +113,7 @@ public class WikiPageDAO{
 						+ ",'" + page.getDelete_Key() + "'"
 						+ ")";
 		System.out.println(sql);
-		System.out.println(sql2);
+		System.out.prinmtln(sql2);
 		DBManager.simpleUpdate(sql);
 		DBManager.simpleUpdate(sql2);
 	}

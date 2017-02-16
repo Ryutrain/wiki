@@ -13,16 +13,14 @@
 <li><a href="create.jsp">V‹K</a><br><br>
  
 <li><a href="historylist">XV—š—ğ</a><br><br>
-<div id="foo" >
-=======
 
 
 
 	<div id="foo" >
->>>>>>> origin/master
+
  <hr>
 
- (c)1996-2016 Servlet/jsp RyutrainProject2016
+ (c)1996-2017 RyutrainProject2017
  </div>
  
 </body>
